@@ -17,6 +17,7 @@ namespace WebCamJS.Controllers
         }
 
         //[HttpPost]
+        //The argument submit holds the value attribute of input button from the view.
         public ActionResult Robot(string submit)
         {
             byte[] sendbuf;
@@ -24,27 +25,21 @@ namespace WebCamJS.Controllers
             switch (submit)
             {
                 case "Forward":
-                    ViewBag.Pressed = "This is Forward";
                     sendbuf = Encoding.ASCII.GetBytes("1");
                     break;
                 case "Back":
-                    ViewBag.Pressed = "This is Back";
                     sendbuf = Encoding.ASCII.GetBytes("2");
                     break;
                 case "Go Left":
-                    ViewBag.Pressed = "This is Left";
                     sendbuf = Encoding.ASCII.GetBytes("3");
                     break;
                 case "Go Right":
-                    ViewBag.Pressed = "This is Right";
                     sendbuf = Encoding.ASCII.GetBytes("4");
                     break;                
                 case "Stop":
-                    ViewBag.Pressed = "This is Stop";
                     sendbuf = Encoding.ASCII.GetBytes("5");
                     break;
                 default:
-                    ViewBag.Pressed = "This is Default";
                     sendbuf = Encoding.ASCII.GetBytes("0");
                     break;
             }
